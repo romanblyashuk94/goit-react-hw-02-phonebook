@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './Contacts.module.scss';
 
 const Contacts = ({ contacts, deleteContact }) => {
@@ -17,6 +18,16 @@ const Contacts = ({ contacts, deleteContact }) => {
       ))}
     </ul>
   );
+};
+
+Contacts.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      number: PropTypes.string,
+    })
+  ),
 };
 
 export default Contacts;

@@ -1,4 +1,5 @@
 import s from './Filter.module.scss';
+import PropTypes from 'prop-types';
 
 const Filter = ({ filterValue, handleFilter }) => {
   return (
@@ -12,6 +13,10 @@ const Filter = ({ filterValue, handleFilter }) => {
       />
     </div>
   );
+};
+
+Filter.prototype = {
+  filterValue: PropTypes.string.isRequired,
 };
 
 export default Filter;
